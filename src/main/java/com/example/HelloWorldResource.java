@@ -4,6 +4,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("/hello-world")
 public class HelloWorldResource {
@@ -12,5 +13,11 @@ public class HelloWorldResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         return "Hello from RESTEasy Reactive";
+    }
+
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response demo() {
+        return Response.accepted().build();
     }
 }
